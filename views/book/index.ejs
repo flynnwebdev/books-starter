@@ -1,0 +1,16 @@
+<h1>Books</h1>
+
+<a href="/books/new">Create New Book</a>
+
+<% for (book of books) { %>
+    <div>
+        <p>Title: <%= book.title %></p>
+        <p>Published: <%= book.published %></p>
+        <p>Author:
+            <a href="/authors/<%= book.author._id %>"><%= book.author.name %></a>
+        </p>
+        <a href="/books/<%= book._id %>">Show</a> | 
+        <a onclick="return confirm('Are you sure?')" href="/books/<%= book._id %>?_method=DELETE">Delete</a>
+    </div>
+    <hr />
+<% } %>
