@@ -20,6 +20,15 @@ async function index(req, res) {
     // res.render("author/index", {authors})
 }
 
+async function show(req, res) {
+    let author = await AuthorModel.findById(req.params.id)
+    res.render('layout', {
+        view: 'author/show',
+        title: 'Author',
+        author
+    })
+}
+
 function make(req, res) {
     //shows the form to create the resource
     res.render('layout', {
@@ -29,9 +38,15 @@ function make(req, res) {
     // res.render("author/new")
 }
 
+async function destroy(req, res) {
+    await AuthorModel.findByIdAndRemove(req.params.id)
+    res.redirect("/authors")
+}
 
 module.exports = {
     create,
     index,
-    make
+    make,
+    show,
+    destroy
 }
