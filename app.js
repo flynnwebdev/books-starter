@@ -6,6 +6,8 @@ const methodOverride = require("method-override")
 const app = express()
 const port = 3000
 
+app.use(express.static('public'))
+
 mongoose.connect("mongodb://localhost/books_r_us", { useNewUrlParser: true })
 mongoose.connection.on("error", err => console.log(err))
 

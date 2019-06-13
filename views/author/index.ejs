@@ -7,6 +7,7 @@
         <p>Name: <%= author.name %></p>
         <p>Bio: <%= author.bio %></p>
         <p>Gender: <%= author.gender %></p>
+        <a href="/authors/<%= author._id %>/edit">Edit</a> | 
         <a href="/authors/<%= author._id %>">Show</a> | 
         <a onclick="return confirm('Are you sure?')" href="/authors/<%= author._id %>?_method=DELETE">Delete</a>
     </div>

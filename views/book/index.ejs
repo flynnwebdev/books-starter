@@ -5,7 +5,7 @@
 <% for (book of books) { %>
     <div>
         <p>Title: <%= book.title %></p>
-        <p>Published: <%= book.published %></p>
+        <p>Published: <%= book.published.toLocaleDateString('en-AU', { timezone: 'Australia/Brisbane' }) %></p>
         <p>Author:
             <a href="/authors/<%= book.author._id %>"><%= book.author.name %></a>
         </p>
