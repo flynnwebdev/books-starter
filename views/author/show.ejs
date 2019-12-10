@@ -1,0 +1,11 @@
+<h1>Author</h1>
+<p><strong>Name: </strong><%= author.name %></p>
+<p><strong>Bio: </strong><%= author.bio %></p>
+<p><strong>Gender: </strong><%= author.gender %></p>
+<p><a href="/authors/<%= author._id %>/edit">Edit</a></p>
+<p>
+    <form onsubmit='return confirm("Are you sure?")' action="/authors/<%= author._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+</p>
+<p><a href="/authors">Back to Authors</a></p>

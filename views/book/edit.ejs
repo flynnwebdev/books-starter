@@ -1,0 +1,19 @@
+<h1>Edit Book</h1>
+
+<form method="post" action="/books/<%= book._id %>?_method=PUT">
+    <div>
+        <label>Title</label>
+    </div>
+    <div>
+        <input type="text" name="title" value="<%= book.title %>" />
+    </div>
+    <div>
+        <label>Published</label>
+    </div>
+    <div>
+        <input type="date" name="published" value="<%= book.getPublished() %>" />
+    </div>
+    <div>
+        <input type="submit" value="Submit Form" />
+    </div>
+</form>

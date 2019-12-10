@@ -1,0 +1,12 @@
+<h1>Books</h1>
+
+<a href="/books/new">Create New Book</a>
+
+<% for (book of books) { %>
+    <div>
+        <p>Title: <%= book.title %></p>
+        <p>Published: <%= book.getPublished() %></p>
+        <p><a href="/books/<%= book._id %>">Show</a></p>
+    </div>
+    <hr />
+<% } %>

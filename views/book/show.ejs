@@ -1,0 +1,10 @@
+<h1>Book</h1>
+<p><strong>Title: </strong><%= book.title %></p>
+<p><strong>Published: </strong><%= book.getPublished() %></p>
+<p><a href="/books/<%= book._id %>/edit">Edit</a></p>
+<p>
+    <form onsubmit='return confirm("Are you sure?")' action="/books/<%= book._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+</p>
+<p><a href="/books">Back to Books</a></p>
