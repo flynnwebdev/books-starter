@@ -6,6 +6,9 @@
     <div>
         <p>Title: <%= book.title %></p>
         <p>Published: <%= book.getPublished() %></p>
+        <% if (book.author) { %>
+           <p>Author: <%= book.author.name %></p>
+        <% } %>
         <p><a href="/books/<%= book._id %>">Show</a></p>
     </div>
     <hr />

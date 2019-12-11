@@ -8,6 +8,10 @@ const BookSchema = new mongoose.Schema({
     published: {
         type: Date,
         required: true
+    },
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "author"
     }
 })
 

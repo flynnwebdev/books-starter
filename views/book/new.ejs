@@ -14,6 +14,16 @@
         <input type="date" name="published" />
     </div>
     <div>
+        <label>Author</label>
+    </div>
+    <div>
+        <select name="author">
+            <% for (author of authors) { %>
+                <option value="<%= author._id %>"><%= author.name %></option>
+            <% } %>
+        </select>
+    </div>
+    <div>
         <input type="submit" value="Submit Form" />
     </div>
 </form>

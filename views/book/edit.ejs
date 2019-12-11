@@ -14,6 +14,19 @@
         <input type="date" name="published" value="<%= book.getPublished() %>" />
     </div>
     <div>
+        <label>Author</label>
+    </div>
+    <div>
+        <select name="author">
+            <% if (book.author) { %>
+                <option hidden selected value="<%= book.author._id %>"><%= book.author.name %></option>
+            <% } %>
+            <% for (author of authors) { %>
+                <option value="<%= author._id %>"><%= author.name %></option>
+            <% } %>
+        </select>
+    </div>
+    <div>
         <input type="submit" value="Submit Form" />
     </div>
 </form>
